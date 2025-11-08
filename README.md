@@ -12,10 +12,13 @@
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-black?style=flat&logo=javascript)
 ![HTML](https://img.shields.io/badge/HTML-black?style=flat&logo=html5)
-![CSS](https://img.shields.io/badge/CSS-black?style=flat&logo=css3)
+![CSS](https://img.shields.io/badge/CSS-black?style=flat&logo=css)
 ![GitHub](https://img.shields.io/badge/GitHub-black?style=flat&logo=github)
 ![JSON](https://img.shields.io/badge/JSON-black?style=flat&logo=json)
 ![MySQL](https://img.shields.io/badge/MySQL-black?style=flat&logo=mysql)
+![Docker](https://img.shields.io/badge/Docker-black?style=flat&logo=docker)
+![npm](https://img.shields.io/badge/npm-black?style=flat&logo=npm)
+
 
 ---
 
