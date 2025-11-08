@@ -58,7 +58,14 @@ jobs:
         if: failure() # só roda se o passo anterior falhar
         uses: actions/upload-artifact@v4
         with:
-
           name: snake-dist
           path: ${{ env.BUILD_DIR }}
-          
+
+      # 5️⃣ Publica os arquivos SVG na branch "output"
+      - name: Publish to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: ${{ env.OUTPUT_BRANCH }}
+          build_dir: ${{ env.BUILD_DIR }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
