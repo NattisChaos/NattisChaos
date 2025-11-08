@@ -68,4 +68,4 @@ jobs:
           target_branch: ${{ env.OUTPUT_BRANCH }}
           build_dir: ${{ env.BUILD_DIR }}
         env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          token: ${{ secrets.PERSONAL_TOKEN }}
