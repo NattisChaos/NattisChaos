@@ -2,7 +2,7 @@
 
 ## 👋 About Me
 
-✨ **Nattis** — beginner dev exploring the world of **JavaScript**  
+✨ **Nattis** — beginner dev exploring JavaScript  
 🚀 Learning to build, test & simplify things  
 💬 Always open to learning and collaboration
 
