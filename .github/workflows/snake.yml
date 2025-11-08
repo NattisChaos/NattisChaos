@@ -1,0 +1,64 @@
+# 🐍 Nome do workflow (aparece na aba "Actions")
+name: Generate Snake
+
+# ⚡️ Define quando o workflow será executado
+on:
+  schedule:
+    - cron: "0 0 * * *" # executa diariamente à meia-noite (00:00 UTC)
+  workflow_dispatch: # permite rodar manualmente pelo botão "Run workflow"
+  push:
+    branches:
+      - main # também roda quando há push na branch main
+
+# 🔒 Permissões explícitas para segurança e funcionamento
+permissions:
+  contents: read # permite ler o conteúdo do repositório
+  pages: write # permite publicar na branch de saída (output)
+  id-token: write # necessário para autenticação com GitHub Pages
+
+# ⚙️ Garante que só um workflow "snake" rode por vez
+concurrency:
+  group: generate-snake # nome do grupo de concorrência
+  cancel-in-progress: true # se um novo iniciar, o anterior é cancelado
+
+# 🧱 Define o job principal
+jobs:
+  generate_snake:
+    name: Generate and publish snake # nome exibido na interface
+    runs-on: ubuntu-latest # roda num ambiente Linux fornecido pelo GitHub
+
+    # 🌍 Variáveis de ambiente (pra evitar repetir valores no código)
+    env:
+      OUTPUT_BRANCH: output # branch onde os arquivos serão publicados
+      BUILD_DIR: dist # pasta onde os SVGs serão gerados
+
+    # 🔄 Passos que serão executados em ordem
+    steps:
+      # 1️⃣ Baixar o conteúdo do repositório
+      - name: Checkout repository
+        uses: actions/checkout@v3 # ação oficial do GitHub pra clonar o repo
+        with:
+          fetch-depth: 0 # pega o histórico completo (necessário pra gerar a snake corretamente)
+
+      # 2️⃣ Limpar a pasta dist (evita lixo de execuções anteriores)
+      - name: Clean dist
+        run: rm -rf ${{ env.BUILD_DIR }} || true
+
+      # 3️⃣ Gerar os arquivos SVG da animação
+      - name: Generate the snake animation
+        uses: Platane/snk@v3 # ação do criador da "snake" (Platane)
+        with:
+          github_user_name: NattisChaos # usa automaticamente o nome do dono do repositório
+          outputs: | # define os arquivos que serão gerados
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      # 4️⃣ (Opcional) Se der erro, envia os arquivos gerados como artefato pra depuração
+      - name: Upload artifact (for debugging)
+        if: failure() # só roda se o passo anterior falhar
+        uses: actions/upload-artifact@v4
+        with:
+
+          name: snake-dist
+          path: ${{ env.BUILD_DIR }}
+          

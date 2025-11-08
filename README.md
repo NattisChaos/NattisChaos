@@ -1,5 +1,34 @@
-👋 Nattis | Beginner dev exploring JavaScript
+<div align="center">
 
-🚀 Learning to build, test & simplify
+## 👋 About Me
 
-💬 Always open to learn and collaborate
+✨ **Nattis** — beginner dev exploring the world of **JavaScript**  
+🚀 Learning to build, test & simplify things  
+💬 Always open to learning and collaboration
+
+---
+
+## Currently Learning
+
+![JavaScript](https://img.shields.io/badge/JavaScript-black?style=flat&logo=javascript)
+![HTML](https://img.shields.io/badge/HTML-black?style=flat&logo=html5)
+![CSS](https://img.shields.io/badge/CSS-black?style=flat&logo=css3)
+![GitHub](https://img.shields.io/badge/GitHub-black?style=flat&logo=github)
+![JSON](https://img.shields.io/badge/JSON-black?style=flat&logo=json)
+![MySQL](https://img.shields.io/badge/MySQL-black?style=flat&logo=mysql)
+
+---
+
+## Contribution Activity
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/NattisChaos/NattisChaos/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/NattisChaos/NattisChaos/output/github-contribution-grid-snake.svg">
+  <img alt="GitHub contribution grid snake animation" src="https://raw.githubusercontent.com/NattisChaos/NattisChaos/output/github-contribution-grid-snake.svg">
+</picture>
+
+---
+
+![Generate Snake](https://github.com/NattisChaos/NattisChaos/actions/workflows/snake.yml/badge.svg)
+
+</div>
